@@ -1,0 +1,191 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+    gap: 0;
+    position: relative;
+    grid-template-columns: "overlap";
+    margin: 0;
+    padding: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(120px, 1fr));
+    grid-template-rows: repeat(5, minmax(120px, 1fr));
+    gap: 25px;
+    z-index: 1;
+    grid-area: "overlap";
+    align-self: center;
+    justify-self: center;
+}
+
+.grid-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    background-color: #ddd;
+    border: 2px solid #ccc;
+    font-size: 90px;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.scoreboard {
+    align-self: center;
+    justify-self: center;
+    position: absolute;
+    grid-area: "overlap";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    width: 70%; 
+    overflow-y: auto; 
+}
+
+
+label {
+    margin-bottom: 5px;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.hidden {
+    display: none;
+}
+.scoreboard {
+    width: 70%; 
+}
+
+#scoreTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#scoreTable th {
+    border: 1px solid #000; 
+    padding: 8px;
+}
+
+#scoreTable th.player-name {
+    width: 50%; 
+}
+
+#scoreTable th.time {
+    width: 50%; 
+}
+
+#scoreTable td {
+    border: 1px solid #000; 
+    padding: 8px;
+}
+
+#toggleScoreBoardButton {
+    flex: 1;
+    margin-right:15px;
+}
+#changeName {
+    flex: 1;
+    margin-right:15px;
+}
+#playAgainButton {
+    flex: 1; 
+}
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; 
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: #4CAF50; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049; 
+}
+button:active {
+    background-color: white;
+    color: #4CAF50;
+}
+
+.play-again {
+    background-color: orange;
+    color: white; 
+}
+
+.play-again:hover {
+    background-color: darkorange;
+}
+.play-again:active{
+    background-color:white;
+    color: darkorange;
+}
+
+.grid-item.revealed {
+    background-color: #4CAF50; 
+    color: white; 
+}
+@media only screen and (max-width: 900px) {
+    .grid-item {
+        width: auto;
+        height: auto;
+    }
+    .grid-container {
+        grid-template-columns: repeat(5, 140px);
+        grid-template-rows: repeat(6, 140px);
+        gap: 0; 
+    }
+}
+@media only screen and (max-width: 700px) {
+    .grid-item {
+        width: auto;
+        height: auto;
+    }
+    .grid-container {
+        grid-template-columns: repeat(5, 110px);
+        grid-template-rows: repeat(6, 110px);
+        gap: 0; 
+    }
+}
+@media only screen and (max-width: 550px) {
+    .grid-item {
+        width: auto;
+        height: auto;
+    }
+    .grid-container {
+        grid-template-columns: repeat(5, 90px);
+        grid-template-rows: repeat(6, 90px);
+        gap: 0; 
+    }
+}
